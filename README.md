@@ -21,7 +21,7 @@ This repository contains a complete manual testing suite for Sauce Demo — a de
 SauceDemo-Testing-full-Portfolio/
 ├── README.md               (this file)
 ├── TEST-PLAN.md            (test objectives, scope, environment, entry/exit criteria)
-├── TEST-CASES.md           (all 83 test cases with expected vs actual results)
+├── TEST-CASES.md           (all 84 test cases with expected vs actual results)
 └── bug-reports/
     ├── README.md           (bug index with severity table and links)
     ├── STAND-01.md
@@ -92,9 +92,9 @@ SauceDemo-Testing-full-Portfolio/
 | Severity | Count |
 |---|---|
 | Critical | 3 |
-| High | 10 |
-| Medium | 5 |
-| Low | 3 |
+| High | 8 |
+| Medium | 6 |
+| Low | 2 |
 | **Total** | **19** |
 
 ---
