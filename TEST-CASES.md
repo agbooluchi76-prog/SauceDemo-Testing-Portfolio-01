@@ -1,7 +1,7 @@
 # Sauce Demo Test Cases
 
 **Application:** [Sauce Demo](https://www.saucedemo.com)
-**Tester:** Felicia Agbooluchi
+**Tester:** Felicia Agbo oluchi
 **Date:** June 2026
 **Total Test Cases:** 84 | **Pass:** 65 | **Fail:** 19
 
