@@ -46,12 +46,12 @@ The following areas are covered in this test plan:
 
 | Username | Password | Expected Behavior |
 |---|---|---|
-| standard_user | secret_sauce | Checkout flow - accepted special characters |
-| locked_out_user | secret_sauce | Login blocked; user is locked out |
-| problem_user | secret_sauce | Image mismatches; not all items add to cart |
-| performance_glitch_user | secret_sauce | Extreme login latency (20-30 seconds) |
-| error_user | secret_sauce | Missing product descriptions; not all items add to cart; checkout broken |
-| visual_user | secret_sauce | Image mismatches; UI element misplacement; price instability |
+| standard_user | secret_sauce | All core flows work as expected. One defect found in checkout validation. |
+| locked_out_user | secret_sauce | Login is blocked. User cannot access the application. |
+| problem_user | secret_sauce | Image mismatches across product pages. 3 of 6 items cannot be added to cart. Last Name field blocks checkout. |
+| performance_glitch_user | secret_sauce | Login succeeds but with extreme latency of 20-30 seconds. Checkout validation defect present. |
+| error_user | secret_sauce | Missing product descriptions. 3 of 6 items cannot be added to cart. Last Name field non-functional. Finish button not clickable. |
+| visual_user | secret_sauce | Image mismatches. Cart icon and checkout button misplaced. Price instability on inventory page. Sort filters broken. |
 
 ---
 
@@ -63,9 +63,9 @@ The following areas are covered in this test plan:
 - No blocking defects on login or critical path
 
 ### Exit Criteria
-- All High priority tests executed and passed
+- All High priority tests executed with results documented
 - Medium and Low tests executed with known issues logged
-- At least one full regression run completed
+- At least one full regression run completed per user account
 
 ---
 
@@ -73,11 +73,11 @@ The following areas are covered in this test plan:
 
 | Technique | Description |
 |---|---|
-| Positive testing | Standard user happy path: login, add to cart, checkout, logout |
-| Negative testing | Empty fields, invalid passwords, locked user |
-| Exploratory testing | problem_user and visual_user for UI and image inconsistencies |
-| Boundary testing | Missing postal code during checkout |
-| User-based testing | Each of 6 user accounts tested against the same core test cases |
+| Positive testing | Verified all core flows work as expected for standard_user: login, browsing, sorting, add to cart, checkout, logout |
+| Negative testing | Tested invalid inputs including empty fields, wrong passwords, special characters in name fields, alphabets in zip code |
+| Error state testing | Verified correct error messages appear for locked_out_user and missing required checkout fields |
+| Exploratory testing | Applied to problem_user, error_user, and visual_user to surface image mismatches, broken cart, non-functional fields, and UI misplacement |
+| Cross-user testing | Applied the same core test case set independently to all 6 user accounts to identify account-specific defects |
 
 ---
 
@@ -99,6 +99,7 @@ The following areas are covered in this test plan:
 - Test plan (this document)
 - Executed test cases ([TEST-CASES.md](./TEST-CASES.md))
 - Bug reports ([bug-reports/README.md](./bug-reports/README.md))
+- Bug report screenshots ([bug-reports/screenshots/](./bug-reports/screenshots/))
 - Test execution summary (pass/fail per test case, included in TEST-CASES.md)
 
 ---
@@ -107,6 +108,6 @@ The following areas are covered in this test plan:
 
 | Status | Count |
 |---|---|
-| Pass | 64 |
+| Pass | 65 |
 | Fail | 19 |
-| **Total** | **83** |
+| **Total** | **84** |
