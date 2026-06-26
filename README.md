@@ -11,7 +11,7 @@
 
 This repository contains a complete manual testing suite for Sauce Demo — a demo e-commerce application built for QA practice. All six user account types were tested independently across login, inventory, cart, checkout, and navigation flows.
 
-**84 test cases executed. 19 bugs found across 6 user accounts.**
+**84 test cases executed. 19 bugs found across 5 user accounts.**
 
 ---
 
@@ -24,25 +24,45 @@ SauceDemo-Testing-full-Portfolio/
 ├── TEST-CASES.md           (all 84 test cases with expected vs actual results)
 └── bug-reports/
     ├── README.md           (bug index with severity table and links)
-    ├── STAND-01.md
-    ├── LOCK-01.md
-    ├── PERF-01.md
-    ├── PERF-02.md
-    ├── PROB-01.md
-    ├── PROB-02.md
-    ├── PROB-03.md
-    ├── ERR-01.md
-    ├── ERR-02.md
-    ├── ERR-03.md
-    ├── ERR-04.md
-    ├── ERR-05.md
-    ├── VIS-01.md
-    ├── VIS-02.md
-    ├── VIS-03.md
-    ├── VIS-04.md
-    ├── VIS-05.md
-    ├── VIS-06.md
-    └── VIS-07.md
+    ├── STAND-01-special-chars-accepted-checkout.md
+    ├── LOCK-01-locked-out-user-login-error.md
+    ├── PERF-01-login-delay-20-30-seconds.md
+    ├── PERF-02-special-chars-accepted-checkout.md
+    ├── PROB-01-image-mismatch-inventory-vs-detail.md
+    ├── PROB-02-3-of-6-items-cannot-add-to-cart.md
+    ├── PROB-03-last-name-field-blocks-checkout.md
+    ├── ERR-01-product-description-missing-detail-page.md
+    ├── ERR-02-3-of-6-items-cannot-add-to-cart.md
+    ├── ERR-03-last-name-non-functional-allows-checkout.md
+    ├── ERR-04-finish-button-not-clickable.md
+    ├── ERR-05-special-chars-accepted-checkout.md
+    ├── VIS-01-image-mismatch-inventory-vs-detail.md
+    ├── VIS-02-cart-icon-wrong-position.md
+    ├── VIS-03-sort-low-to-high-not-working.md
+    ├── VIS-04-sort-high-to-low-not-working.md
+    ├── VIS-05-checkout-button-wrong-position.md
+    ├── VIS-06-inventory-price-does-not-match-cart-price.md
+    ├── VIS-07-special-chars-accepted-checkout.md
+    └── screenshots/
+        ├── STAND-01-screenshot.jpeg
+        ├── LOCK-01-screenshot.jpeg
+        ├── PERF-01-login-delay.jpeg
+        ├── PERF-02-special-chars-checkout.jpeg
+        ├── PROB-01-image-mismatch.jpeg
+        ├── PROB-02-items-cannot-add-to-cart.jpeg
+        ├── PROB-03-last-name-blocks-checkout.jpeg
+        ├── ERR-01-description-missing.jpeg
+        ├── ERR-02-items-cannot-add-to-cart.jpeg
+        ├── ERR-03-last-name-allows-checkout.jpeg
+        ├── ERR-04-finish-button-not-clickable.jpeg
+        ├── ERR-05-special-chars-checkout.jpeg
+        ├── VIS-01-image-mismatch.jpeg
+        ├── VIS-02-cart-icon-position.jpeg
+        ├── VIS-03-sort-low-high.jpeg
+        ├── VIS-04-sort-high-low.jpeg
+        ├── VIS-05-checkout-button-position.jpeg
+        ├── VIS-06-price-mismatch.jpeg
+        └── VIS-07-special-chars-checkout.jpeg
 ```
 
 ---
@@ -101,11 +121,11 @@ SauceDemo-Testing-full-Portfolio/
 
 ## Testing Techniques Applied
 
-- **Positive testing** — standard_user happy path across all core flows
-- **Negative testing** — empty fields, invalid passwords, locked account
-- **Exploratory testing** — problem_user and visual_user for UI and image defects
-- **Boundary testing** — missing postal code during checkout
-- **Cross-user testing** — same core test cases applied independently to all 6 user accounts
+- **Positive testing** — verified that all core flows work as expected for standard_user: login, product browsing, sorting, add to cart, checkout, and logout
+- **Negative testing** — tested invalid inputs including empty fields, wrong passwords, special characters in name fields, and alphabets in zip code fields
+- **Error state testing** — verified correct error messages appear for locked_out_user login attempts and missing required checkout fields
+- **Exploratory testing** — applied to problem_user, error_user, and visual_user to surface image mismatches, broken cart functionality, non-functional fields, and UI misplacement
+- **Cross-user testing** — applied the same core test case set independently across all 6 user accounts to identify account-specific defects
 
 ---
 
